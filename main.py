@@ -4,8 +4,10 @@ from time import sleep
 import time
 import os
 from os import environ
-
-
+import logging
+logging.basicConfig()
+logger = logging.getLogger("BOT")
+logger.setLevel(logging.DEBUG)
 INTERVAL = 5 * 60 * 1  # tweet every 6 hours
 # INTERVAL = 15  # every 15 seconds, for testing
 
@@ -25,3 +27,5 @@ INTERVAL = 5 * 60 * 1  # tweet every 6 hours
 while True:
     print("about to get ad...")
     api.update_status("hello Test")
+    time.sleep(INTERVAL)
+    
