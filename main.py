@@ -1,18 +1,21 @@
-import tweepy
 import logging
 from time import sleep
 import time
 import os
 from os import environ
 import logging
+import  tweepy
+from tweepy import OAuthHandler
+from tweepy import API
+
+
 logging.basicConfig()
 logger = logging.getLogger("BOT")
 logger.setLevel(logging.DEBUG)
+
 INTERVAL = 5 * 60 * 1  # tweet every 6 hours
 # INTERVAL = 15  # every 15 seconds, for testing
 
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 consumer_key = environ['CONSUMER_KEY']
 consumer_secret = environ['CONSUMER_SECRET']
 key = environ['ACCESS_KEY']
